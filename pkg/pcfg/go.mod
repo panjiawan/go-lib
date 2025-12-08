@@ -1,11 +1,11 @@
-module github.com/panjiawan/workaholic/pkg/pcfg
+module github.com/panjiawan/go-lib/pkg/pcfg
 
-go 1.19
+go 1.24.0
 
 require (
 	github.com/json-iterator/go v1.1.12
-	github.com/panjiawan/workaholic/pkg/plog v0.0.0-20240116112232-b7294f469d61
-	go.uber.org/zap v1.27.0
+	github.com/panjiawan/workaholic/pkg/plog v0.0.0-20241104150747-bd75b9184ae4
+	go.uber.org/zap v1.27.1
 	gopkg.in/yaml.v2 v2.4.0
 )
 

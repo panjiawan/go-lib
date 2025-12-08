@@ -1,4 +1,4 @@
-module github.com/panjiawan/workaholic/pkg/plog
+module github.com/panjiawan/go-lib/pkg/plog
 
 go 1.19
 

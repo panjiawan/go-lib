@@ -1,4 +1,4 @@
-module github.com/panjiawan/workaholic/pkg/psignal
+module github.com/panjiawan/go-lib/pkg/psignal
 
 go 1.19
 

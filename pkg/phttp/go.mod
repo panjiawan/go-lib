@@ -1,4 +1,4 @@
-module github.com/panjiawan/workaholic/pkg/phttp
+module github.com/panjiawan/go-lib/pkg/phttp
 
 go 1.19
 
