@@ -113,11 +113,11 @@ func ConfusionArrayKey(arrayLen int) []int {
 		array = append(array, 0)
 	}
 
-	rand.Seed(time.Now().UnixNano())
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	keys := make([]int, 0)
 	for i := 0; i < arrayLen; i++ {
 		tLen := len(array)
-		index := rand.Intn(tLen)
+		index := r.Intn(tLen)
 		array = append(array[0:index], array[index+1:]...)
 		keys = append(keys, index)
 	}
@@ -179,4 +179,56 @@ func FormatPublicKey(publicKey string) (pKey string) {
 	buffer.WriteString("-----END PUBLIC KEY-----\n")
 	pKey = buffer.String()
 	return
+}
+
+// 映射函数：将切片中的每个元素转换为另一种类型
+func Map[T, U any](slice []T, f func(T) U) []U {
+	result := make([]U, len(slice))
+	for i, v := range slice {
+		result[i] = f(v)
+	}
+	return result
+}
+
+// 过滤函数：过滤出满足条件的元素
+func Filter[T any](slice []T, f func(T) bool) []T {
+	var result []T
+	for _, v := range slice {
+		if f(v) {
+			result = append(result, v)
+		}
+	}
+	return result
+}
+
+// 归约函数：将切片归约为单个值
+func Reduce[T, U any](slice []T, initial U, f func(U, T) U) U {
+	result := initial
+	for _, v := range slice {
+		result = f(result, v)
+	}
+	return result
+}
+
+// 包含判断
+func Contains[T comparable](slice []T, target T) bool {
+	for _, v := range slice {
+		if v == target {
+			return true
+		}
+	}
+	return false
+}
+
+// 去重
+func Unique[T comparable](slice []T) []T {
+	seen := make(map[T]bool)
+	var result []T
+	for _, v := range slice {
+		if !seen[v] {
+			seen[v] = true
+			result = append(result, v)
+		}
+	}
+	return result
 }
