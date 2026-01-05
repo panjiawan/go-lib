@@ -23,7 +23,7 @@ func (h *Handle) Register(s os.Signal, f Callback) {
 }
 
 func (h *Handle) Listen() {
-	plog.Info("isignal listen")
+	plog.Info("psignal listen")
 	for {
 		if s, ok := <-h.sigChan; ok {
 			if s == syscall.SIGURG {

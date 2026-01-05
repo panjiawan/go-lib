@@ -1,6 +1,6 @@
 module github.com/panjiawan/go-lib/pkg/psignal
 
-go 1.19
+go 1.23.0
 
 require (
 	github.com/panjiawan/workaholic/pkg/plog v0.0.0-20240410095548-bd5d0b885ed9
