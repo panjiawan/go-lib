@@ -6,6 +6,6 @@ import (
 )
 
 func TestInfo(t *testing.T) {
-	Start("/tmp/", "test.log", true, false)
+	Start("/tmp/", "test.log", true, true)
 	Info("test msg", zap.Any("1", "2"))
 }
