@@ -49,14 +49,18 @@ func (h *Service) Register(path, method string, f fasthttp.RequestHandler) {
 		h.router.OPTIONS(path, f)
 	case "head":
 		h.router.HEAD(path, f)
-	case "put":
+	case MethodPut:
 		h.router.PUT(path, f)
 	case "patch":
 		h.router.PATCH(path, f)
-	case "delete":
+	case MethodDelete:
 		h.router.DELETE(path, f)
 	}
 
+}
+
+func (h *Service) RegisterRootPath(path, rootPath string) {
+	h.router.ServeFiles(path, rootPath)
 }
 
 func (h *Service) RegisterWS(path string, msgType int, cb WSCallback) {
@@ -71,7 +75,7 @@ func (h *Service) RegisterWS(path string, msgType int, cb WSCallback) {
 // Run 启动函数
 func (h *Service) Run() error {
 
-	var addr = ":8889"
+	var addr = ":8880"
 	if h.port != 0 {
 		addr = fmt.Sprintf("%s:%d", h.host, h.port)
 	}

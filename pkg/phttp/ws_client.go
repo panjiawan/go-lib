@@ -11,12 +11,13 @@ import (
 
 type WSClient struct {
 	sync.RWMutex
-	ConnId   int64
-	UserData interface{}
-	conn     *websocket.Conn
-	sendChan chan []byte
-	msgType  int
-	isClose  bool
+	ConnId    int64
+	UserData  interface{}
+	conn      *websocket.Conn
+	sendChan  chan []byte
+	msgType   int
+	isClose   bool
+	Heartbeat time.Time
 }
 
 func (w *WSClient) LoopWrite() {
@@ -41,4 +42,14 @@ func (w *WSClient) Send(msg []byte) {
 	case <-time.After(2 * time.Second):
 		plog.Info("send chan time out")
 	}
+}
+
+func (w *WSClient) Close() {
+	w.RLock()
+	defer w.RUnlock()
+	if w.isClose {
+		return
+	}
+
+	w.conn.Close()
 }
