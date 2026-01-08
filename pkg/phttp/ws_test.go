@@ -3,7 +3,7 @@ package phttp
 import (
 	"fmt"
 	"github.com/fasthttp/websocket"
-	"github.com/panjiawan/workaholic/pkg/plog"
+	"github.com/panjiawan/go-lib/pkg/plog"
 	"github.com/valyala/fasthttp"
 	"testing"
 	"time"

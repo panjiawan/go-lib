@@ -3,7 +3,7 @@ package pcfg
 import (
 	"errors"
 	jsoniter "github.com/json-iterator/go"
-	"github.com/panjiawan/workaholic/pkg/plog"
+	"github.com/panjiawan/go-lib/pkg/plog"
 	"go.uber.org/zap"
 	"gopkg.in/yaml.v2"
 	"io"

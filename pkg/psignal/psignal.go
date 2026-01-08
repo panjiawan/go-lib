@@ -1,7 +1,7 @@
 package psignal
 
 import (
-	"github.com/panjiawan/workaholic/pkg/plog"
+	"github.com/panjiawan/go-lib/pkg/plog"
 	"go.uber.org/zap"
 	"os"
 	"os/signal"

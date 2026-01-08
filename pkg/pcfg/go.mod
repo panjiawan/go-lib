@@ -4,7 +4,7 @@ go 1.24.0
 
 require (
 	github.com/json-iterator/go v1.1.12
-	github.com/panjiawan/workaholic/pkg/plog v0.0.0-20241104150747-bd75b9184ae4
+	github.com/panjiawan/go-lib/pkg/plog v0.0.0-20260108083152-00d0d0b1ade9
 	go.uber.org/zap v1.27.1
 	gopkg.in/yaml.v2 v2.4.0
 )

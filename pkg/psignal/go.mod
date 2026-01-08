@@ -3,7 +3,7 @@ module github.com/panjiawan/go-lib/pkg/psignal
 go 1.23.0
 
 require (
-	github.com/panjiawan/workaholic/pkg/plog v0.0.0-20240410095548-bd5d0b885ed9
+	github.com/panjiawan/go-lib/pkg/plog v0.0.0-20260108083152-00d0d0b1ade9
 	go.uber.org/zap v1.27.0
 )
 

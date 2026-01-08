@@ -3,7 +3,7 @@ package phttp
 import (
 	"fmt"
 	"github.com/buaazp/fasthttprouter"
-	"github.com/panjiawan/workaholic/pkg/plog"
+	"github.com/panjiawan/go-lib/pkg/plog"
 	"github.com/valyala/fasthttp"
 	"go.uber.org/zap"
 	"golang.org/x/time/rate"
