@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/panjiawan/workaholic/pkg/psms"
+	"github.com/panjiawan/go-lib/pkg/psms"
 )
 
 func main() {

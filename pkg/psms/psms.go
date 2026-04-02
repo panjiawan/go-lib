@@ -24,6 +24,7 @@ type ProviderType int
 
 var (
 	QCloud ProviderType = 1
+	AliYun ProviderType = 2
 )
 
 func New(provider ProviderType, config *Config) *Service {
@@ -31,6 +32,9 @@ func New(provider ProviderType, config *Config) *Service {
 	switch provider {
 	case QCloud:
 		s.p = &QcloudProvider{}
+		s.p.Init(config)
+	case AliYun:
+		s.p = &AliYunProvider{}
 		s.p.Init(config)
 	}
 
