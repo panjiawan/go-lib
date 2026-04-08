@@ -1,10 +1,8 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
-
-	"github.com/panjiawan/workaholic/pkg/pstorage"
+	"github.com/panjiawan/go-lib/pkg/pstorage"
 )
 
 func main() {
@@ -14,8 +12,12 @@ func main() {
 		UseHTTPS:      false,
 		UseCdnDomains: false,
 	})
-	b := []byte("hello, this is qiniu cloud")
-	bio := bytes.NewReader(b)
-	res, err := s.PutFromStream("test_bucket", "avatar/test/test.log", bio, int64(len(b)))
-	fmt.Println(res, err)
+
+	//b := []byte("hello, this is qiniu cloud")
+	//bio := bytes.NewReader(b)
+	//res, err := s.PutFromStream("test_bucket", "avatar/test/test.log", bio, int64(len(b)))
+
+	err := s.Delete("night-live-2", "picture/20260330/21.jpg")
+
+	fmt.Println(err)
 }
